@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
+
 const Projects = () => {
   const { t, i18n } = useTranslation();
   const [filter, setFilter] = useState('all');
-
+const isRtl = i18n.language === 'ar';
   const rawItems = t('projects.items', { returnObjects: true });
   const projectItems = Array.isArray(rawItems) ? rawItems : [];
 

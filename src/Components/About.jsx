@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import aboutImg from '../assets/aboutt.jpeg'; 
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   const { t, i18n } = useTranslation();

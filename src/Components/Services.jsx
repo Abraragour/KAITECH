@@ -3,7 +3,7 @@ import { Settings, Shield, Zap, ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 const Services = () => {
   const { t, i18n } = useTranslation(); 
-
+const isRtl = i18n.language === 'ar';
   const services = [
     { icon: <Settings size={40} />, id: "01" },
     { icon: <Shield size={40} />, id: "02" },

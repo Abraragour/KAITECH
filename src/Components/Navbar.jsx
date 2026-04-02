@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet-async';
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
-
+const isRtl = i18n.language === 'ar';
   const toggleLanguage = () => {
     const newLang = i18n.language === 'ar' ? 'en' : 'ar';
     i18n.changeLanguage(newLang);
