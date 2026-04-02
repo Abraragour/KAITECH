@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 // استيراد الأيقونات من قسم Font Awesome 6
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
-
+import { Helmet } from 'react-helmet-async';
 const Footer = () => {
   const { t } = useTranslation();
 
@@ -15,6 +15,11 @@ const Footer = () => {
   ];
 
   return (
+    <>
+    <Helmet>
+        <meta name="author" content="KAITECH Engineering" />
+      </Helmet>
+   
     <footer className="bg-[#000a1d] pt-20 pb-10 border-t border-white/5">
       <div className="container mx-auto px-8 flex flex-col items-center">
         
@@ -58,6 +63,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 

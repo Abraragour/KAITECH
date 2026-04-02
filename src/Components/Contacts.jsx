@@ -1,12 +1,19 @@
 import { useTranslation } from 'react-i18next';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
-
+import { Helmet } from 'react-helmet-async';
 const Contact = () => {
   const { t, i18n } = useTranslation();
   const isRtl = i18n.language === 'ar';
 
-  return (
+  return (<>
+  
+    <Helmet>
+        <title>
+          {isRtl ? 'كايتك | اتصل بنا - تواصل معنا' : 'KAITECH | Contact Us - Get in Touch'}
+        </title>
+        <meta name="description" content={t('contact.desc')} />
+      </Helmet>
     <motion.section 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -123,6 +130,7 @@ const Contact = () => {
         </div>
       </div>
     </motion.section>
+    </>
   );
 };
 

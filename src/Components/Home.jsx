@@ -6,13 +6,24 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Home = ({ onContactClick }) => { 
   const { t, i18n } = useTranslation();
   const slides = t('hero', { returnObjects: true }) || [];
 
   return (
+        
+    
     <section id="home" className="h-screen w-full relative overflow-hidden bg-[#001030]">
+      <Helmet>
+        <title>
+          {i18n.language === 'ar' ? 'كايتك | الرئيسية - تميز هندسي' : 'KAITECH | Home - Engineering Excellence'}
+        </title>
+        <meta name="description" content={t('hero.0.desc')} />
+      </Helmet>
+      
+      
       <Swiper
         key={i18n.language}
         modules={[Autoplay, EffectFade, Navigation]}

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Settings, Shield, Zap, ArrowRight } from 'lucide-react';
-
+import { Helmet } from 'react-helmet-async';
 const Services = () => {
   const { t, i18n } = useTranslation(); 
 
@@ -14,6 +14,12 @@ const Services = () => {
 
   return (
     <section id="services" className="py-32 bg-[#f4f4f4]">
+      <Helmet>
+        <title>
+          {isRtl ? 'كايتك | الخدمات - حلولنا' : 'KAITECH | Services - Our Solutions'}
+        </title>
+        <meta name="description" content={t('services.subtitle')} />
+      </Helmet>
       <div className="container mx-auto px-8">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20">
           <div className="max-w-2xl text-start"> 

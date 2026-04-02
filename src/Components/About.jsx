@@ -7,6 +7,14 @@ const About = () => {
 
   return (
     <section id="about" className="py-24 bg-white overflow-hidden">
+      
+      <Helmet>
+        <title>
+          {i18n.language === 'ar' ? 'كايتك | من نحن - قصتنا' : 'KAITECH | About Us - Our Story'}
+        </title>
+        <meta name="description" content={t('aboutPage.story')} />
+      </Helmet>
+      
       <div className="container mx-auto px-8 md:px-16">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           

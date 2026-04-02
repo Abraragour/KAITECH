@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import { Helmet } from 'react-helmet-async';
 const Projects = () => {
   const { t, i18n } = useTranslation();
   const [filter, setFilter] = useState('all');
@@ -18,6 +18,13 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-24 bg-white">
+     <Helmet>
+        <title>
+          {isRtl ? 'كايتك | معرض المشاريع - إنجازاتنا' : 'KAITECH | Projects - Our Portfolio'}
+        </title>
+        <meta name="description" content={t('projects.subtitle')} />
+      </Helmet>
+     
       <div className="container mx-auto px-8">
         <div className="text-center mb-16">
           <span className="text-[#FF8C00] font-bold tracking-widest uppercase text-sm">{t('projects.title')}</span>

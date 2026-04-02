@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'; // تأكدي إن دي موجودة
 import { Globe, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import logoImg from '../assets/logo.png';
-
+import { Helmet } from 'react-helmet-async';
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +17,12 @@ const Navbar = () => {
   const navLinkStyles = "text-white hover:text-[#FF8C00] transition-colors duration-300 font-medium cursor-pointer";
 
   return (
+    <>
+    <Helmet htmlAttributes={{ 
+        lang: i18n.language, 
+        dir: isRtl ? 'rtl' : 'ltr' 
+      }} />
+ 
     <nav className="bg-[#001030] text-white sticky top-0 z-[1000] shadow-xl border-b border-white/5">
       <div className="container mx-auto px-6 h-20 flex justify-between items-center">
         
@@ -66,6 +72,7 @@ const Navbar = () => {
         </div>
       )}
     </nav>
+       </>
   );
 };
 
